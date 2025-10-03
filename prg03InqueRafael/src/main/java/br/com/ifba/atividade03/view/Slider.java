@@ -26,21 +26,127 @@ public class Slider extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sldInicio = new javax.swing.JSlider();
+        sldFim = new javax.swing.JSlider();
+        sldPasso = new javax.swing.JSlider();
+        lblInicio = new javax.swing.JLabel();
+        lblFim = new javax.swing.JLabel();
+        lblPasso = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
+        btnOk = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        sldInicio.setMajorTickSpacing(1);
+        sldInicio.setMaximum(10);
+        sldInicio.setPaintLabels(true);
+        sldInicio.setPaintTicks(true);
+        sldInicio.setValue(0);
+        sldInicio.setValueIsAdjusting(true);
+
+        sldFim.setMajorTickSpacing(1);
+        sldFim.setMaximum(15);
+        sldFim.setMinimum(1);
+        sldFim.setPaintLabels(true);
+        sldFim.setPaintTicks(true);
+
+        sldPasso.setMajorTickSpacing(1);
+        sldPasso.setMaximum(10);
+        sldPasso.setMinimum(1);
+        sldPasso.setMinorTickSpacing(1);
+        sldPasso.setPaintLabels(true);
+        sldPasso.setPaintTicks(true);
+
+        lblInicio.setText("Inicio");
+
+        lblFim.setText("FIm");
+
+        lblPasso.setText("Passo");
+
+        txtResultado.setColumns(20);
+        txtResultado.setRows(5);
+        jScrollPane1.setViewportView(txtResultado);
+
+        btnOk.setText("OK");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPasso)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblInicio)
+                            .addComponent(lblFim))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sldPasso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sldFim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sldInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(btnOk)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sldInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblInicio))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sldFim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFim))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sldPasso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPasso))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnOk)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        // TODO add your handling code here:
+        int inicio = sldInicio.getValue();
+        int fim = sldFim.getValue();
+        int passo = sldPasso.getValue();
+        
+        // Uso do StringBuilder para eficiência na concatenação
+        StringBuilder resultado = new StringBuilder();
+        int contador = inicio;
+        
+        while (contador <= fim) {
+            resultado.append(contador).append("\n"); // Adiciona o número e uma quebra de linha
+            contador += passo;
+            if (passo <= 0 && contador >= fim) break;
+            if (passo > 0 && contador > fim) break;
+            
+        }
+        
+        txtResultado.setText(resultado.toString()); // Defin o texto da JTextArea com a String construída
+        
+        
+    }//GEN-LAST:event_btnOkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +184,14 @@ public class Slider extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOk;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFim;
+    private javax.swing.JLabel lblInicio;
+    private javax.swing.JLabel lblPasso;
+    private javax.swing.JSlider sldFim;
+    private javax.swing.JSlider sldInicio;
+    private javax.swing.JSlider sldPasso;
+    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
