@@ -50,6 +50,7 @@ public class Slider extends javax.swing.JFrame {
         sldFim.setMinimum(1);
         sldFim.setPaintLabels(true);
         sldFim.setPaintTicks(true);
+        sldFim.setValue(1);
 
         sldPasso.setMajorTickSpacing(1);
         sldPasso.setMaximum(10);
@@ -57,6 +58,7 @@ public class Slider extends javax.swing.JFrame {
         sldPasso.setMinorTickSpacing(1);
         sldPasso.setPaintLabels(true);
         sldPasso.setPaintTicks(true);
+        sldPasso.setValue(1);
 
         lblInicio.setText("Inicio");
 

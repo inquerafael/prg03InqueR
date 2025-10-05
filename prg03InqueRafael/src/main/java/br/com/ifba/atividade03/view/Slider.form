@@ -98,6 +98,7 @@
         <Property name="minimum" type="int" value="1"/>
         <Property name="paintLabels" type="boolean" value="true"/>
         <Property name="paintTicks" type="boolean" value="true"/>
+        <Property name="value" type="int" value="1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSlider" name="sldPasso">
@@ -108,6 +109,7 @@
         <Property name="minorTickSpacing" type="int" value="1"/>
         <Property name="paintLabels" type="boolean" value="true"/>
         <Property name="paintTicks" type="boolean" value="true"/>
+        <Property name="value" type="int" value="1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblInicio">
