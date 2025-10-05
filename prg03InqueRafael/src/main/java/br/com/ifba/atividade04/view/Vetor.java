@@ -99,10 +99,10 @@ public class Vetor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        // TODO add your handling code here:
-        String text = txtEntrada.getText();
-        VactorManager.adicionar(text, lstItens);
-        txtEntrada.setText(""); // Clear text field
+        
+        String text = txtEntrada.getText();//pega o texto de entrada
+        VactorManager.adicionar(text, lstItens);//chama o metodo e passa a lista e o texto captado
+        txtEntrada.setText(""); // limpa text field
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     /**
