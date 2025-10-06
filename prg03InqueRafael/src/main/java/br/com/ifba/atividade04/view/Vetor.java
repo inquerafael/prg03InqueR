@@ -52,8 +52,18 @@ public class Vetor extends javax.swing.JFrame {
         });
 
         btnRemover.setText("remover");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         btnOrdenar.setText("Ordenar");
+        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarActionPerformed(evt);
+            }
+        });
 
         lstItens.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -104,6 +114,16 @@ public class Vetor extends javax.swing.JFrame {
         VactorManager.adicionar(text, lstItens);//chama o metodo e passa a lista e o texto captado
         txtEntrada.setText(""); // limpa text field
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        // TODO add your handling code here:
+        VactorManager.remover(lstItens);
+    }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
+        // TODO add your handling code here:
+        VactorManager.ordenar(lstItens);
+    }//GEN-LAST:event_btnOrdenarActionPerformed
 
     /**
      * @param args the command line arguments
