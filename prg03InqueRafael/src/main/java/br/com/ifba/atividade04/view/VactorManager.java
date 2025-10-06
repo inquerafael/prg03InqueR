@@ -27,7 +27,7 @@ public class VactorManager {
             if (text != null && !text.isEmpty()) {
                 model.addElement(text);
             } else {
-                JOptionPane.showMessageDialog(null, "Please enter some text!", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "!!!!!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
