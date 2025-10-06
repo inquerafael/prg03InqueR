@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.swing.DefaultListModel;
-//import br.com.ifba.atividade04.view.Vetor;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 /**
@@ -28,7 +27,7 @@ public class VactorManager {
             if (text != null && !text.isEmpty()) {
                 model.addElement(text);
             } else {
-                //JOptionPane.showMessageDialog(null, "Please enter some text!", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Please enter some text!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
