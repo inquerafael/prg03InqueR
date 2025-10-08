@@ -62,7 +62,7 @@ public class Fatorial extends javax.swing.JFrame {
         lblTxtResultado.setText("Resultado");
         getContentPane().add(lblTxtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 141, -1, -1));
         getContentPane().add(lblFormula, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 141, 98, 16));
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 141, 57, -1));
+        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 141, 57, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,6 +77,7 @@ public class Fatorial extends javax.swing.JFrame {
         //chamar os metodos da outra classe
         int valor = Integer.parseInt(txtValor.getText());
         metodos.setValor(valor);
+        lblResultado.setText(metodos.getFormula());//seta em resultado o valor depois da resolucao(getformula)
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
