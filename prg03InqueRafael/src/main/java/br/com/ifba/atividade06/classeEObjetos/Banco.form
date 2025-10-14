@@ -108,9 +108,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CC"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkTipoCCActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkTipoCP">
       <Properties>
@@ -135,6 +132,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Abrir Conta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCriarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnFechar">
       <Properties>

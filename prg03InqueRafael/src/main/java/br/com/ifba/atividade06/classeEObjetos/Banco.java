@@ -4,6 +4,8 @@
  */
 package br.com.ifba.atividade06.classeEObjetos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Administrator
@@ -46,11 +48,6 @@ public class Banco extends javax.swing.JFrame {
         lblTxtTipo.setText("Tipo de conta:");
 
         chkTipoCC.setText("CC");
-        chkTipoCC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkTipoCCActionPerformed(evt);
-            }
-        });
 
         chkTipoCP.setText("CP");
 
@@ -59,6 +56,11 @@ public class Banco extends javax.swing.JFrame {
         lblTxtNum.setText("Numero da conta:");
 
         btnCriar.setText("Abrir Conta");
+        btnCriar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarActionPerformed(evt);
+            }
+        });
 
         btnFechar.setText("Fechar Conta");
 
@@ -122,9 +124,22 @@ public class Banco extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void chkTipoCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTipoCCActionPerformed
+    private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkTipoCCActionPerformed
+        boolean selecionado1 = chkTipoCC.isSelected();
+        boolean selecionado2 = chkTipoCP.isSelected();
+        
+        // Lógica de validação
+        if (!selecionado1 && !selecionado2) {
+            JOptionPane.showMessageDialog(this,"Você precisa selecionar uma opção!");
+        } else if (selecionado1 && selecionado2) {
+            JOptionPane.showMessageDialog(this, "Apenas uma opção pode ser selecionada!");
+        } else if (selecionado1) {
+            JOptionPane.showMessageDialog(this, "Selecionado: Opção Conta Corrernte");
+        } else { // selecionado2
+            JOptionPane.showMessageDialog(this, "Selecionado: Opção Cota Poupança");
+        }
+    }//GEN-LAST:event_btnCriarActionPerformed
 
     /**
      * @param args the command line arguments
