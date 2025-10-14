@@ -28,21 +28,103 @@ public class Banco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        lblTxtTipo = new javax.swing.JLabel();
+        chkTipoCC = new javax.swing.JCheckBox();
+        chkTipoCP = new javax.swing.JCheckBox();
+        lblTxtNome = new javax.swing.JLabel();
+        txtNomeUser = new javax.swing.JTextField();
+        lblTxtNum = new javax.swing.JLabel();
+        txtNumConta = new javax.swing.JTextField();
+        btnCriar = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Banco alguma coisa");
+
+        lblTxtTipo.setText("Tipo de conta:");
+
+        chkTipoCC.setText("CC");
+        chkTipoCC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkTipoCCActionPerformed(evt);
+            }
+        });
+
+        chkTipoCP.setText("CP");
+
+        lblTxtNome.setText("Nome do Titular:");
+
+        lblTxtNum.setText("Numero da conta:");
+
+        btnCriar.setText("Abrir Conta");
+
+        btnFechar.setText("Fechar Conta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTxtTipo)
+                            .addComponent(lblTxtNome)
+                            .addComponent(lblTxtNum))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(119, 119, 119)
+                                .addComponent(chkTipoCC)
+                                .addGap(18, 18, 18)
+                                .addComponent(chkTipoCP))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtNumConta, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtNomeUser, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnFechar)))))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTxtTipo)
+                    .addComponent(chkTipoCC)
+                    .addComponent(chkTipoCP))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTxtNum)
+                    .addComponent(txtNumConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTxtNome)
+                    .addComponent(txtNomeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCriar)
+                    .addComponent(btnFechar))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void chkTipoCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTipoCCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkTipoCCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +162,15 @@ public class Banco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCriar;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JCheckBox chkTipoCC;
+    private javax.swing.JCheckBox chkTipoCP;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblTxtNome;
+    private javax.swing.JLabel lblTxtNum;
+    private javax.swing.JLabel lblTxtTipo;
+    private javax.swing.JTextField txtNomeUser;
+    private javax.swing.JTextField txtNumConta;
     // End of variables declaration//GEN-END:variables
 }
