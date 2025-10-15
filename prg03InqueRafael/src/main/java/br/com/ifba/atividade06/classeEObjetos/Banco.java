@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Banco extends javax.swing.JFrame {
 
-    public ContaBanco contab;
+    public ContaBanco conta1;
     /**
      * Creates new form Banco
      */
@@ -30,6 +30,7 @@ public class Banco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         lblTxtTipo = new javax.swing.JLabel();
         chkTipoCC = new javax.swing.JCheckBox();
@@ -41,15 +42,26 @@ public class Banco extends javax.swing.JFrame {
         btnCriar = new javax.swing.JButton();
         btnFechar = new javax.swing.JButton();
 
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Banco alguma coisa");
 
         lblTxtTipo.setText("Tipo de conta:");
 
-        chkTipoCC.setText("CC");
+        chkTipoCC.setText("Conta Corrente");
 
-        chkTipoCP.setText("CP");
+        chkTipoCP.setText("Cota Poupança");
 
         lblTxtNome.setText("Nome do Titular:");
 
@@ -62,7 +74,12 @@ public class Banco extends javax.swing.JFrame {
             }
         });
 
-        btnFechar.setText("Fechar Conta");
+        btnFechar.setText("Fechar conta");
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFecharActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,19 +99,17 @@ public class Banco extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(119, 119, 119)
                                 .addComponent(chkTipoCC)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkTipoCP))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtNumConta, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtNomeUser, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnFechar)))))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtNomeUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btnFechar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                        .addComponent(btnCriar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,11 +129,11 @@ public class Banco extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTxtNome)
                     .addComponent(txtNomeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCriar)
-                    .addComponent(btnFechar))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCriar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFechar)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,20 +141,34 @@ public class Banco extends javax.swing.JFrame {
 
     private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
         // TODO add your handling code here:
-        boolean selecionado1 = chkTipoCC.isSelected();
-        boolean selecionado2 = chkTipoCP.isSelected();
+        boolean cC = chkTipoCC.isSelected();
+        boolean cP = chkTipoCP.isSelected();
+        int numConta = Integer.parseInt(txtNumConta.getText());
+        String nome = txtNomeUser.getText();
+        
         
         // Lógica de validação
-        if (!selecionado1 && !selecionado2) {
+        if (!cC && !cP) {
             JOptionPane.showMessageDialog(this,"Você precisa selecionar uma opção!");
-        } else if (selecionado1 && selecionado2) {
+        } else if (cC && cP) {
             JOptionPane.showMessageDialog(this, "Apenas uma opção pode ser selecionada!");
-        } else if (selecionado1) {
-            JOptionPane.showMessageDialog(this, "Selecionado: Opção Conta Corrernte");
-        } else { // selecionado2
-            JOptionPane.showMessageDialog(this, "Selecionado: Opção Cota Poupança");
+        } else if (cC) {
+            String cp = "cp";
+            conta1 = new ContaBanco(numConta,cp,nome);
+            conta1.criarConta();
+            JOptionPane.showMessageDialog(this, "Selecionado: Conta Corrente");
+        } else { // cP
+            String cc = "cc";
+            conta1 = new ContaBanco(numConta,cc,nome);
+            conta1.criarConta();
+            JOptionPane.showMessageDialog(this, "Selecionado: Cota Poupança");
         }
     }//GEN-LAST:event_btnCriarActionPerformed
+
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        // TODO add your handling code here:
+        conta1.fecharConta();
+    }//GEN-LAST:event_btnFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,6 +210,7 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JButton btnFechar;
     private javax.swing.JCheckBox chkTipoCC;
     private javax.swing.JCheckBox chkTipoCP;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTxtNome;
     private javax.swing.JLabel lblTxtNum;
