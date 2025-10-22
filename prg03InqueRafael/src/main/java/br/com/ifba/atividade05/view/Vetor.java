@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.com.ifba.atividade04.view;
-import br.com.ifba.atividade04.view.VactorManager;
+package br.com.ifba.atividade05.view;
+import br.com.ifba.atividade05.view.VactorManager;
 import javax.swing.DefaultListModel;
 
 /**
