@@ -55,12 +55,12 @@ public class ContaBanco {
         } else {
         // Mensagem caso a conta já esteja desativada.
         JOptionPane.showMessageDialog(null, "Atenção: esta conta já está fechada.");
-    }
-        if(status){
-            
         }
+        
     }
-    public void depositar(){}
+    public void depositar(){
+        
+    }
     public void sacar(){}
     public void pagarMensal(){}
     

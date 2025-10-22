@@ -18,6 +18,7 @@ public class Banco extends javax.swing.JFrame {
      */
     public Banco() {
         initComponents();
+        setLocationRelativeTo(null);//centraliza
         //contab = new ContaBanco();
     }
 
@@ -40,7 +41,6 @@ public class Banco extends javax.swing.JFrame {
         lblTxtNum = new javax.swing.JLabel();
         txtNumConta = new javax.swing.JTextField();
         btnCriar = new javax.swing.JButton();
-        btnFechar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -74,13 +74,6 @@ public class Banco extends javax.swing.JFrame {
             }
         });
 
-        btnFechar.setText("Fechar conta");
-        btnFechar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFecharActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,9 +99,7 @@ public class Banco extends javax.swing.JFrame {
                                 .addComponent(txtNumConta, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtNomeUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(btnFechar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                        .addComponent(btnCriar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                    .addComponent(btnCriar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -131,16 +122,14 @@ public class Banco extends javax.swing.JFrame {
                     .addComponent(txtNomeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCriar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnFechar)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
-        // TODO add your handling code here:
+        Conta novaConta = new Conta();
         boolean cC = chkTipoCC.isSelected();
         boolean cP = chkTipoCP.isSelected();
         int numConta = Integer.parseInt(txtNumConta.getText());
@@ -157,18 +146,20 @@ public class Banco extends javax.swing.JFrame {
             conta1 = new ContaBanco(numConta,cp,nome);
             conta1.criarConta();
             JOptionPane.showMessageDialog(this, "Selecionado: Conta Corrente");
+            txtNomeUser.setText("");
+            txtNumConta.setText("");
+            //chkTipoCC.d;
         } else { // cP
             String cc = "cc";
             conta1 = new ContaBanco(numConta,cc,nome);
             conta1.criarConta();
             JOptionPane.showMessageDialog(this, "Selecionado: Cota Poupança");
+            txtNomeUser.setText("");
+            txtNumConta.setText("");
+            //chkTipoCP.updateUI();
         }
+        novaConta.setVisible(true);
     }//GEN-LAST:event_btnCriarActionPerformed
-
-    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
-        // TODO add your handling code here:
-        conta1.fecharConta();
-    }//GEN-LAST:event_btnFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,7 +198,6 @@ public class Banco extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCriar;
-    private javax.swing.JButton btnFechar;
     private javax.swing.JCheckBox chkTipoCC;
     private javax.swing.JCheckBox chkTipoCP;
     private javax.swing.JFrame jFrame1;
