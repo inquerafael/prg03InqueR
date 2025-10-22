@@ -31,7 +31,6 @@ public class Banco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         lblTxtTipo = new javax.swing.JLabel();
         chkTipoCC = new javax.swing.JCheckBox();
@@ -41,17 +40,6 @@ public class Banco extends javax.swing.JFrame {
         lblTxtNum = new javax.swing.JLabel();
         txtNumConta = new javax.swing.JTextField();
         btnCriar = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +52,12 @@ public class Banco extends javax.swing.JFrame {
         chkTipoCP.setText("Cota Poupança");
 
         lblTxtNome.setText("Nome do Titular:");
+
+        txtNomeUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeUserActionPerformed(evt);
+            }
+        });
 
         lblTxtNum.setText("Numero da conta:");
 
@@ -161,6 +155,10 @@ public class Banco extends javax.swing.JFrame {
         novaConta.setVisible(true);
     }//GEN-LAST:event_btnCriarActionPerformed
 
+    private void txtNomeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,7 +198,6 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JButton btnCriar;
     private javax.swing.JCheckBox chkTipoCC;
     private javax.swing.JCheckBox chkTipoCP;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTxtNome;
     private javax.swing.JLabel lblTxtNum;
