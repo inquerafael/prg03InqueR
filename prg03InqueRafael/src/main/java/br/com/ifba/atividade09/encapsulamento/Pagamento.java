@@ -5,8 +5,10 @@
 package br.com.ifba.atividade09.encapsulamento;
 
 /**
- *
- * @author Administrator
+ * @author Inque
+ * Interface que define o contrato para uma forma de pagamento.
+ * Qualquer classe que implementar esta interface deverá fornecer
+ * lógicas para calcular o total e imprimir um recibo.
  */
 public interface Pagamento {
     
