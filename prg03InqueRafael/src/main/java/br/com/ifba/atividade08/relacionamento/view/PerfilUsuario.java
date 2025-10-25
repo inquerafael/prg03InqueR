@@ -4,6 +4,7 @@
  */
 package br.com.ifba.atividade08.relacionamento.view;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,18 +15,43 @@ public class PerfilUsuario {
     private long id;
     private String descript;
     private List<String> permissoes;
+    
+    //relacoes
+    private List<Usuario> usuarios;
+    
+    
     //construtor
-
-    public PerfilUsuario(long id, String descript, List<String> permissoes) {
-        this.id = id;
-        this.descript = descript;
-        this.permissoes = permissoes;
+    public PerfilUsuario() {
+        //this.id = id;
+        this.usuarios = new ArrayList<>();
+        this.permissoes = new ArrayList<>();
     }
     
     //metodos
-    public void Metodo(){}
+    @Override
+    public String toString() {
+        return "PerfilUsuario{" + "id=" + id + ", descript=" + descript + ", permissoes=" + permissoes + '}';
+    }
     
     //get e set
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+    
 
     public String getDescript() {
         return descript;

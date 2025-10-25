@@ -56,5 +56,11 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.kwbhatti</groupId>
+            <artifactId>data-utility</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>
