@@ -27,11 +27,11 @@ public class PagamentoPix implements Pagamento {
 
     @Override
     public void imprimirRecibo() {
-        double valorCashback = this.valor * CASHBACK_PERCENTUAL;
+        double cashback = this.valor * CASHBACK_PERCENTUAL;
 
         System.out.println("--- RECIBO (Pix) ---");
         System.out.printf("Valor base: R$ %.2f%n", this.valor);
-        System.out.printf("Cashback (2%%): -R$ %.2f%n", valorCashback);
+        System.out.printf("Cashback (2%%): -R$ %.2f%n", cashback);
         System.out.println("-------------------------");
         System.out.printf("Valor Final: R$ %.2f%n", this.calcularTotal());
         System.out.println("-------------------------");
