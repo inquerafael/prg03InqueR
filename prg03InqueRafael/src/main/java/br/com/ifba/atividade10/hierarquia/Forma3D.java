@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.com.ifba.atividade10.hierarquia;
 
@@ -8,7 +8,6 @@ package br.com.ifba.atividade10.hierarquia;
  *
  * @author Administrator
  */
-public interface Forma {
-    public float obterArea();
-    public float obterVolume();
+public class Forma3D extends Formas {
+    
 }
