@@ -8,16 +8,7 @@ package br.com.ifba.atividade10.hierarquia;
  *
  * @author Administrator
  */
-public abstract class Formas implements Forma{
+public abstract class Formas{
 
-    @Override
-    public float obterArea() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public float obterVolume() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
 }

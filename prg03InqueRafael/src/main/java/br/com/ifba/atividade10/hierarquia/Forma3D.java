@@ -8,6 +8,10 @@ package br.com.ifba.atividade10.hierarquia;
  *
  * @author Administrator
  */
-public class Forma3D extends Formas {
+public abstract class Forma3D extends Formas {
+    // Área da superfície
+    public abstract double obterArea();
     
+    // Volume
+    public abstract double obterVolume();
 }
