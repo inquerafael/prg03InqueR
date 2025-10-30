@@ -12,7 +12,7 @@ import br.com.ifba.atividade10.hierarquia.Forma2D;
  */
 public class Circulo extends Forma2D {
     
-    private float raio;
+    private final double raio;
     
     //construtor
     public Circulo(float raio) {

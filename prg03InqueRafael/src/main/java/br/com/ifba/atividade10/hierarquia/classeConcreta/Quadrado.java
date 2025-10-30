@@ -11,6 +11,12 @@ import br.com.ifba.atividade10.hierarquia.Forma2D;
  * @author Administrator
  */
 public class Quadrado extends Forma2D {
+    private float lado;
+    
+    //construtor
+    public Quadrado(float lado) {
+        this.lado = lado;
+    }
 
     @Override
     public double obterArea() {
