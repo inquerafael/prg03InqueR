@@ -15,7 +15,12 @@ public class Circulo extends Forma2D {
     private final double raio;
     
     //construtor
-    public Circulo(float raio) {
+
+    /**
+     *
+     * @param raio
+     */
+    public Circulo(double raio) {
         this.raio = raio;
     }
     
