@@ -15,6 +15,17 @@ public class Janela extends javax.swing.JFrame {
      */
     public Janela() {
         initComponents();
+        //f 2d
+        chkCirc1.setVisible(false);
+        chkQuad1.setVisible(false);
+        chkTria1.setVisible(false);
+        //f 3d
+        chkEsfe1.setVisible(false);
+        chkCubo1.setVisible(false);
+        chkPira1.setVisible(false);
+        //valor
+        lblValor1.setVisible(false);
+        txtEntradaValor1.setVisible(false);
     }
 
     /**
@@ -105,10 +116,36 @@ public class Janela extends javax.swing.JFrame {
 
     private void chk2D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk2D1ActionPerformed
         // TODO add your handling code here:
+        if(chk2D1.isSelected() && !chk3D1.isSelected()){
+            chkCirc1.setVisible(true);
+            chkQuad1.setVisible(true);
+            chkTria1.setVisible(true);
+            lblValor1.setVisible(true);
+            txtEntradaValor1.setVisible(true);
+        }else{
+            chkCirc1.setVisible(false);
+            chkQuad1.setVisible(false);
+            chkTria1.setVisible(false);
+            lblValor1.setVisible(false);
+            txtEntradaValor1.setVisible(false);
+        }
     }//GEN-LAST:event_chk2D1ActionPerformed
 
     private void chk3D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk3D1ActionPerformed
         // TODO add your handling code here:
+        if(chk3D1.isSelected() && !chk2D1.isSelected()){
+            chkCirc1.setVisible(true);
+            chkQuad1.setVisible(true);
+            chkTria1.setVisible(true);
+            lblValor1.setVisible(true);
+            txtEntradaValor1.setVisible(true);
+        }else{
+            chkCirc1.setVisible(false);
+            chkQuad1.setVisible(false);
+            chkTria1.setVisible(false);
+            lblValor1.setVisible(false);
+            txtEntradaValor1.setVisible(false);
+        }
     }//GEN-LAST:event_chk3D1ActionPerformed
 
     /**
